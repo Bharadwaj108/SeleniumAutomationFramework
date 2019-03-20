@@ -119,6 +119,9 @@
     <Compile Include="Hooks\FrameworkInitHook.cs" />
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
+    <Compile Include="Pages\ItemsPage.cs" />
+    <Compile Include="Pages\ProductCategoryPage.cs" />
+    <Compile Include="Pages\ProductsPage.cs" />
     <Compile Include="Pages\ViewCartPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\HomeSteps.cs" />

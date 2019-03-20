@@ -82,18 +82,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
  testRunner.Given("I navigate to the Officeworks website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.And("I have logged as \"Bharat\" using the login credentials", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have logged as \"bharadwaj54@yahoo.com\" using the login credentials", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
  testRunner.And("I have navigated to \"iPhones & Mobile Phones\" section under the \"Technology\" main" +
                     " menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
  testRunner.And("Clicked to view the \"IPhones\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
- testRunner.When("I add the \"\" to my shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 11
- testRunner.And("Selected the View cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 12
- testRunner.Then("The items \"\" should be part of my cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
