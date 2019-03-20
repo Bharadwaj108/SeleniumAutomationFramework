@@ -28,7 +28,8 @@ namespace AutomationFramework.Config
             Settings.TestLogFilePath = Path.Combine(TestResourceLocation(), Settings.TestLogLocation + @"\" + "Log - " + DateTime.Now.ToString("yyyyMMddHHmmss") + ".log");
             Settings.ExtentReportLocation = WebTestConfiguration.TestSettings.WebTestSettings[Settings.TestEnvironment].ExtentReportLocation;
             Settings.ExtentReportFolderLocation = Path.Combine(TestResourceLocation(), Settings.ExtentReportLocation + @"\ExtentReport_" + DateTime.Now.ToString("yyyyMMddHHmmss") + @"\");
-            Settings.TestDataLocation = Path.Combine(TestResourceLocation(), Settings.TestDataLocation);
+            //Settings.TestDataLocation = Path.Combine(TestResourceLocation(), Settings.TestDataLocation);
+            Settings.TestDataLocation = Path.Combine(TestResourceLocation(), "TestData");
             Settings.ProjectName = WebTestConfiguration.TestSettings.WebTestSettings[Settings.TestEnvironment].ProjectName;
             Settings.WebBrowser = (BrowserType)Enum.Parse(typeof(BrowserType), (WebTestConfiguration.TestSettings.WebTestSettings[Settings.TestEnvironment].Browser));
             Settings.AUT = WebTestConfiguration.TestSettings.WebTestSettings[Settings.TestEnvironment].AUT;

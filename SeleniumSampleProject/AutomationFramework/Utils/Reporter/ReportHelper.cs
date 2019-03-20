@@ -1,4 +1,5 @@
-﻿using AutomationFramework.Config;
+﻿using AutomationFramework.Base;
+using AutomationFramework.Config;
 
 
 namespace AutomationFramework.Utils.Reporter
@@ -40,6 +41,7 @@ namespace AutomationFramework.Utils.Reporter
                 default:
                     break;
             }
+            DriverContext.Driver.Close();
         }
     }
 }

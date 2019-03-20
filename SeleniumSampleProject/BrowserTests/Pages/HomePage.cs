@@ -9,7 +9,7 @@ namespace BrowserTests.Pages
     {
         IWebElement txtUserName = DriverContext.Driver.FindElement(By.Name("username"));
         IWebElement txtPassword = DriverContext.Driver.FindElement(By.Name("password"));
-        IWebElement btnLogin = DriverContext.Driver.FindElement(By.XPath("//label[text()='Log in']"));
+        IWebElement btnLogin = DriverContext.Driver.FindElement(By.XPath("//button[text()='Log in']"));
 
         public HomePage Login(string userName)
         {
