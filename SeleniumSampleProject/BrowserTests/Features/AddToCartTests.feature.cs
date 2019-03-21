@@ -88,6 +88,8 @@ this.ScenarioInitialize(scenarioInfo);
                     " menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
  testRunner.And("Clicked to view the \"IPhones\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+ testRunner.When("I add the \"iPhone XS Max 64GB Gold|iPhone XR 64GB Black\" to my shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
         }

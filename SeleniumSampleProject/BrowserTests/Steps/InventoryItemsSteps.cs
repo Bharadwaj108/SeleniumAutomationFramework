@@ -15,5 +15,12 @@ namespace BrowserTests.Steps
             Assert.IsNotNull(CurrentPage);
         }
 
+        [When(@"I add the ""(.*)"" to my shopping cart")]
+        public void AddTheItemsToMyShoppingCart(string items)
+        {
+            bool productaAddedToCart = CurrentPage.As<ProductCategoryPage>().AddItemsToCart(items);
+        }
+
+
     }
 }
