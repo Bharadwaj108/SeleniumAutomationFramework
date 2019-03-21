@@ -47,29 +47,51 @@ namespace BrowserTests.Pages
         {
             bool flag = true;
             IWebElement productDiv = null;
+            IWebElement container = null;
             try
             {                 
                 IList<IWebElement> itemContainers = productsGridViewContainer.FindElements(By.XPath("//div[contains(@data-ref,'product-tile')]"));
-                foreach (var itemContainer in itemContainers)
+                IWebElement addToCartButton = null;
+                /*foreach (var itemContainer in itemContainers)
                 {
                     try
                     {
-                         productDiv = itemContainer.FindElement(By.XPath("(//div[contains(text(), '" + item + "')] | //*[@value='" + item + "'])"));
+                        productDiv = itemContainer.FindElement(By.XPath("(//div[contains(text(), '" + item + "')] | //*[@value='" + item + "'])"));
+                        container = itemContainer;
+                        break;
+                        //productDiv = itemContainer.FindElement(By.XPath("(//div[contains(text(),'" + item + "')]"));
+                    }
+                    catch (NoSuchElementException ex)
+                    {
+                        //do nothing
+                    }                    
+                }*/
+                for (int i = 0; i < itemContainers.Count; i++)
+                {
+                    try
+                    {
+                        //productDiv = itemContainers[i].FindElement(By.XPath("(//a[(text()='" + item + "')]"));
+                        IList<IWebElement> anchors = itemContainers[i].FindElements(By.TagName("a"));
+                        foreach (var anchor in anchors)
+                        {
+                            string anchorText = anchor.Text;
+                            if (string.Compare(anchorText,item,true) == 0)
+                            {
+                                addToCartButton = itemContainers[i].FindElement(By.XPath("//button[contains(@data-ref,'add-to-cart-button')]"));
+                                addToCartButton.Click();
+                                container = itemContainers[i];
+                                return true;
+                            }
+                        }                        
+                        //productDiv = itemContainer.FindElement(By.XPath("(//div[contains(text(),'" + item + "')]"));
                     }
                     catch (NoSuchElementException ex)
                     {
                         //do nothing
                     }
-                    if(productDiv != null) //get the Add To Cart button reference and click it
-                    {
-                        IWebElement addToCartButton = itemContainer.FindElement(By.XPath("//button[contains(@data-ref,'add-to-cart-button')]"));
-                        addToCartButton.Click();
-                        Thread.Sleep(3000);
-                        break;
-                    }
-                }
+                }                
                 //if the product was not found log an error saying product was missing or not fond in the inventory
-                if (productDiv is null)
+                if (container is null)
                 {
                     //Log Error
                     return false;
@@ -114,5 +136,21 @@ namespace BrowserTests.Pages
             return flag;
         }
 
+        public ViewCartPage ClickOnViewCart()
+        {
+            try
+            {
+                DriverContext.Driver.FindElement(By.XPath("//div[@data-ref='navLink-cart']")).Click();
+                Thread.Sleep(2000);
+                DriverContext.Driver.FindElement(By.XPath("//button[text()='View Cart & Checkout']")).Click();
+                Thread.Sleep(5000);
+            }
+            catch (System.Exception)
+            {
+
+                return null;
+            }
+            return GetInstance<ViewCartPage>();
+        }
     }
 }

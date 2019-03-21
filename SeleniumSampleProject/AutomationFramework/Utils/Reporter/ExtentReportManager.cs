@@ -23,8 +23,8 @@ namespace AutomationFramework.Utils.Reporter
             }
             ExtentHtmlReporter = new ExtentHtmlReporter(reportfolderLocation);                 
             ExtentHtmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
-            ExtentHtmlReporter.Config.DocumentTitle = "Sympli Test Automation Report";
-            ExtentHtmlReporter.Config.ReportName = "Sympli Test Automation Report";            
+            ExtentHtmlReporter.Config.DocumentTitle = "Test Automation Report";
+            ExtentHtmlReporter.Config.ReportName = "Test Automation Report";            
             ExtentReport = new ExtentReports();            
             ExtentReport.AttachReporter(ExtentHtmlReporter);
             

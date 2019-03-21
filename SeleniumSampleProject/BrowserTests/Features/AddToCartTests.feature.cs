@@ -70,26 +70,30 @@ namespace BrowserTests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add Items To Cart")]
+        [NUnit.Framework.DescriptionAttribute("Add Items To Cart - Positive test")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void AddItemsToCart()
+        public virtual void AddItemsToCart_PositiveTest()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Items To Cart", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Items To Cart - Positive test", null, new string[] {
                         "mytag"});
-#line 5
+#line 10
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 6
+#line 11
  testRunner.Given("I navigate to the Officeworks website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 7
+#line 12
  testRunner.And("I have logged as \"bharadwaj54@yahoo.com\" using the login credentials", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 8
+#line 13
  testRunner.And("I have navigated to \"iPhones & Mobile Phones\" section under the \"Technology\" main" +
                     " menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 9
+#line 14
  testRunner.And("Clicked to view the \"IPhones\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
- testRunner.When("I add the \"iPhone XS Max 64GB Gold|iPhone XR 64GB Black\" to my shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
+ testRunner.When("I add the \"iPhone XS Max 64GB Gold\" to my shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 16
+ testRunner.And("Selected the View cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.Then("The items \"iPhone XS Max 64GB Gold\" should be part of my cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
