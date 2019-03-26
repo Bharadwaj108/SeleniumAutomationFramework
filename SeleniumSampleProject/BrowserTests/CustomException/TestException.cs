@@ -6,8 +6,7 @@ using NUnit.Framework;
 namespace BrowserTests.CustomException
 {
     public class TestException :Exception
-    {
-        //
+    {        
         public TestException(string scenarioName, LogType logType, string info, string additionalInfo = null, string furtherAdditionalInfo = null)
         {
             LogHelper.WriteToLog("Test Scenario Name: " + scenarioName, logType);

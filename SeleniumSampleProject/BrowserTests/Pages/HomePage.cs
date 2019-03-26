@@ -2,23 +2,24 @@
 using AutomationFramework.Base;
 using AutomationFramework.Config;
 using AutomationFramework.Utils;
+using AutomationFramework.Utils.Logger;
 using OpenQA.Selenium;
 
 namespace BrowserTests.Pages
 {
     public class HomePage : BasePage
     {
-        IWebElement txtUserName = DriverContext.Driver.FindElement(By.Name("username"));
+        /*IWebElement txtUserName = DriverContext.Driver.FindElement(By.Name("username"));
         //IWebElement txtPassword = DriverContext.Driver.FindElement(By.Name("password"));
         IWebElement txtPassword = DriverContext.Driver.FindElement(By.XPath("//input[@data-ref='home-login-password']"));
-        IWebElement btnLogin = DriverContext.Driver.FindElement(By.XPath("//button[@data-ref='home-login-button']"));
+        IWebElement btnLogin = DriverContext.Driver.FindElement(By.XPath("//button[@data-ref='home-login-button']"));*/
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="userName"></param>
         /// <returns></returns>
-        public HomePage Login(string userName)
+       /* public HomePage Login(string userName)
         {
             string password = "";
             try
@@ -31,6 +32,7 @@ namespace BrowserTests.Pages
                 txtPassword.SendKeys(password);
                 btnLogin.Click();
                 //ToDo:Check for successful login
+                LogHelper.WriteToLog("Login Successful", AutomationFramework.Utils.Logger.LogType.Info,"SuccessfulLogin");
             }
             catch (System.Exception ex)
             {
@@ -39,7 +41,7 @@ namespace BrowserTests.Pages
 
             }
             return GetInstance<HomePage>();
-        }
+        }*/
 
         /// <summary>
         /// Navigate through the Officeworks main menu on the top of the page

@@ -12,7 +12,7 @@ namespace BrowserTests.Steps
         public void GivenINavigateToTheOfficeworksWebsite()
         {
             NaviateSite();
-            CurrentPage = GetInstance<HomePage>();
+            CurrentPage = GetInstance<LoginPage>();
             Assert.IsNotNull(CurrentPage);
         }
 

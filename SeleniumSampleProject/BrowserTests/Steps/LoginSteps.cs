@@ -12,7 +12,7 @@ namespace BrowserTests.Steps
         [Given(@"I have logged as ""(.*)"" using the login credentials")]
         public void LoginToOfficeWorksAccount(string userName)
         {
-            CurrentPage = CurrentPage.As<HomePage>().Login(userName);
+            CurrentPage = CurrentPage.As<LoginPage>().Login(userName);
             Assert.IsNotNull(CurrentPage);
         }        
 

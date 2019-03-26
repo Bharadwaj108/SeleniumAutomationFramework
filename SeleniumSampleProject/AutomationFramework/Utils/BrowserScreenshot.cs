@@ -10,6 +10,10 @@ namespace AutomationFramework.Utils
     {
         public static string CaptureBrowserScreenshot(string fileName)
         {
+            if(!Directory.Exists(Settings.ScreenShotPath))
+            {
+                Directory.CreateDirectory(Settings.ScreenShotPath);
+            }
             string filePath = Path.Combine(Settings.ScreenShotPath, fileName + DateTime.Now.ToString("yyyyddMHHmmss")+".png");
             Screenshot testScreenshot = ((ITakesScreenshot)DriverContext.Driver).GetScreenshot();
             testScreenshot.SaveAsFile(filePath);

@@ -57,6 +57,24 @@ namespace AutomationFramework.Utils.Logger
             }            
         }
 
+        public static void WriteToLog(string message, LogType logType, string screenShotFileName)
+        {
+            switch (Settings.TestLogTarget)
+            {
+                case LogTarget.Log4Net:
+                    if (logger is null)
+                        logger = new LogFourNetManager();
+                    logger.Log(message, logType);
+                    string screenshotFilePath = BrowserScreenshot.CaptureBrowserScreenshot(screenShotFileName);
+                    logger.Log("Screenshot added to loaction : " + screenshotFilePath, logType);                    
+                    break;
+                case LogTarget.Text:
+                    break;
+                default:
+                    break;
+            }
+        }
+
         public static void WriteToLog(object obj, string exceptionMessage)
         {
             switch (Settings.TestLogTarget)
