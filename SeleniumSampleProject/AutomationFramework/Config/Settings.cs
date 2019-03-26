@@ -17,5 +17,6 @@ namespace AutomationFramework.Config
         public static string ProjectName { get; set; }
         public static BrowserType WebBrowser { get; set; }
         public static string AUT { get; set; }
+        public static string ScreenShotPath { get; internal set; }
     }
 }

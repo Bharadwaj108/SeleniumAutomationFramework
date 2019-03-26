@@ -31,6 +31,8 @@ namespace AutomationFramework.Config
             //Settings.TestDataLocation = Path.Combine(TestResourceLocation(), Settings.TestDataLocation);
             Settings.TestDataLocation = Path.Combine(TestResourceLocation(), "TestData");
             Settings.ProjectName = WebTestConfiguration.TestSettings.WebTestSettings[Settings.TestEnvironment].ProjectName;
+            string ScreenshotLocation = WebTestConfiguration.TestSettings.WebTestSettings[Settings.TestEnvironment].ScreenShotLocation;
+            Settings.ScreenShotPath = Path.Combine(TestResourceLocation(), ScreenshotLocation + @"\Screenshots_" + DateTime.Now.ToString("yyyyMMddHHmmss") + @"\");
             Settings.WebBrowser = (BrowserType)Enum.Parse(typeof(BrowserType), (WebTestConfiguration.TestSettings.WebTestSettings[Settings.TestEnvironment].Browser));
             Settings.AUT = WebTestConfiguration.TestSettings.WebTestSettings[Settings.TestEnvironment].AUT;
         }

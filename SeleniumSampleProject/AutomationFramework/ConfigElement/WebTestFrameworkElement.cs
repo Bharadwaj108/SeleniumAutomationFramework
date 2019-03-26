@@ -31,6 +31,9 @@ namespace AutomationFramework.ConfigElement
         [ConfigurationProperty("projectName", IsRequired = true)]
         public string ProjectName => (string)base["projectName"];
 
+        [ConfigurationProperty("screenShotLocation", IsRequired = true)]
+        public string ScreenShotLocation => (string)base["screenShotLocation"];
+
 
 
 
